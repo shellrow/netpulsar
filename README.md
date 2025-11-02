@@ -1,2 +1,57 @@
-# netpulsar
-Cross-platform network diagnostic suite
+# NetPulsar
+
+<p align="center">
+  <img src="resources/icon/np-icon.png" alt="NetPulsar Logo" width="128" height="128" />
+</p>
+
+Cross-platform network diagnostic suite built with **Rust** + **Tauri**.  
+Inspect, monitor, and analyze your network.
+
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/shellrow/netpulsar)
+![License](https://img.shields.io/github/license/shellrow/netpulsar)
+![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue)
+
+---
+
+## Features
+
+- **Interface Overview** - List active adapters with IPs, gateways, and traffic stats  
+- **Neighbor Scan** - Scan your LAN
+- **Net Route** - Inspect routing tables, gateways, and metrics  
+- **Socket Connection** - View active TCP/UDP connections with process information  
+- **Public IP Info** - Detect IPv4 / IPv6, ASN, and Country data  
+- **Ping / TCP / UDP / QUIC** - Test latency and reachability across protocols  
+- **Port Scan** - Discover open ports (Common, Top1000, or custom sets)  
+- **Host Scan** - Scan your network to identify alive hosts  
+- **Cross-Platform** - macOS, Windows, Linux supported  
+
+---
+
+## 🚀 Getting Started
+
+### Using Installer
+Download the installer for your platform from the [releases page](https://github.com/shellrow/netpulsar/releases).
+
+### 🦀 Build from source
+```bash
+# 1. Clone the repository
+git clone https://github.com/shellrow/netpulsar.git
+cd netpulsar
+
+# 2. Install dependencies
+cargo install tauri-cli
+npm install
+
+# 3. Run in development mode
+cargo tauri dev
+
+# 4. Build release package
+cargo tauri build
+```
+
+## Screenshots
+![NetPulsar Dashboard](resources/ss/np-dashboard.png)
+![NetPulsar Interfaces](resources/ss/np-ifaces.png)
+![NetPulsar Neighbor](resources/ss/np-neighbor.png)
+![NetPulsar Ping](resources/ss/np-ping.png)
+![NetPulsar PortScan](resources/ss/np-portscan.png)
