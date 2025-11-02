@@ -168,7 +168,7 @@ pub fn run() {
             command::interfaces::get_default_network_interface,
             command::interfaces::get_network_address_map,
             command::routes::get_routes,
-            command::routes::get_arp_table,
+            command::routes::get_neighbor_table,
             command::socket::get_sockets_all,
             command::internet::get_public_ip_info,
             command::system::get_sys_info,

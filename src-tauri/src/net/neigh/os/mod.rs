@@ -8,10 +8,10 @@ mod windows;
 mod linux;
 
 #[cfg(target_vendor = "apple")]
-pub use self::darwin::get_arp_table;
+pub use self::darwin::get_neighbor_table;
 
 #[cfg(target_os = "windows")]
-pub use self::windows::get_arp_table;
+pub use self::windows::get_neighbor_table;
 
 #[cfg(target_os = "linux")]
-pub use self::linux::get_arp_table;
+pub use self::linux::get_neighbor_table;

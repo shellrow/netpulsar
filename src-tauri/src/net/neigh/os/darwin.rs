@@ -278,7 +278,7 @@ fn message_to_arppair(msg: &[u8]) -> Option<(IpAddr, MacAddr)> {
 }
 
 /// Build an ARP/Neighbor table from the BSD/Darwin routing socket via `sysctl`.
-pub fn get_arp_table() -> io::Result<HashMap<IpAddr, MacAddr>> {
+pub fn get_neighbor_table() -> io::Result<HashMap<IpAddr, MacAddr>> {
     let mut arp_map: HashMap<IpAddr, MacAddr> = HashMap::new();
     // sysctl net.route dump for ARP/neighbor entries (IPv4 only here).
     let mut mib = [
