@@ -56,7 +56,9 @@ async function initConfigFromTauri() {
   }
 }
 
-await initConfigFromTauri();
+;(async () => {
+  await initConfigFromTauri()
+})();
 
 const app = createApp(App);
 app.use(router);
