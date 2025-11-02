@@ -4,6 +4,6 @@ use netdev::MacAddr;
 
 mod os;
 
-pub fn get_arp_table() -> io::Result<HashMap<IpAddr, MacAddr>> {
-    os::get_arp_table()
+pub fn get_neighbor_table() -> io::Result<HashMap<IpAddr, MacAddr>> {
+    os::get_neighbor_table()
 }

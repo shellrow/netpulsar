@@ -32,7 +32,7 @@ pub async fn neighbor_scan(app: &AppHandle, run_id: &str, iface: netdev::Interfa
     let hostscan_result = crate::probe::scan::icmp::host_scan(&app, &run_id, src_ipv4_opt, src_ipv6_opt, setting)
         .await?;
 
-    let neigh_table = crate::net::neigh::get_arp_table()?;
+    let neigh_table = crate::net::neigh::get_neighbor_table()?;
 
     let oui_db = ndb_oui::OuiDb::bundled();
     let self_ips: Vec<IpAddr> = iface.ip_addrs();

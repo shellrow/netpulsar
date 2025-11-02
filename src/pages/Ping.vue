@@ -71,17 +71,6 @@ async function startPing() {
   }
 }
 
-async function cancelPing() {
-  if (!running.value) return;
-  try {
-    await invoke("ping_cancel", { opId: opId.value });
-  } catch {
-    // ignore cancel failure
-  } finally {
-    running.value = false;
-  }
-}
-
 let unlistenStart: UnlistenFn | null = null;
 let unlistenProgress: UnlistenFn | null = null;
 let unlistenDone: UnlistenFn | null = null;
@@ -239,15 +228,6 @@ function fmtMs(v?: number | null) {
             :loading="loading"
             @click="startPing"
             aria-label="Start ping"
-          />
-          <Button
-            label="Stop"
-            icon="pi pi-stop"
-            severity="danger"
-            outlined
-            :disabled="!running"
-            @click="cancelPing"
-            aria-label="Stop ping"
           />
         </div>
       </div>

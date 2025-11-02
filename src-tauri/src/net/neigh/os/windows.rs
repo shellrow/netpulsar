@@ -15,7 +15,7 @@ use windows_sys::Win32::{
     },
 };
 
-pub fn get_arp_table() -> io::Result<HashMap<IpAddr, MacAddr>> {
+pub fn get_neighbor_table() -> io::Result<HashMap<IpAddr, MacAddr>> {
     let mut map = HashMap::new();
     // IPv4(ARP)
     if let Ok(m) = dump_ipnet(AF_INET) {

@@ -208,7 +208,7 @@ fn read_proc_net_arp() -> io::Result<HashMap<IpAddr, MacAddr>> {
 
 /// Dump neighbour(ARP/NDP) table via netlink.
 /// If fails, fallback to read /proc/net/arp
-pub fn get_arp_table() -> io::Result<HashMap<IpAddr, MacAddr>> {
+pub fn get_neighbor_table() -> io::Result<HashMap<IpAddr, MacAddr>> {
     // netlink
     if let Ok(neighs) = dump_neigh() {
         if let Ok(m) = neighs_to_map(neighs) {
