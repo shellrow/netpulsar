@@ -1,6 +1,6 @@
 [package]
 name = "netpulsar"
-version = "0.1.0"
+version = "0.2.0"
 description = "Cross-platform network information tool"
 authors = ["shellrow <shellrow@foctal.com>"]
 edition = "2021"
