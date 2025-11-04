@@ -21,7 +21,7 @@ pub struct AppInfo {
 impl AppInfo {
     pub fn current() -> Self {
         Self {
-            name: "Nflux",
+            name: "NetPulsar",
             description: "Cross-platform network information tool",
             version: env!("CARGO_PKG_VERSION"),
             authors: &["shellrow <https://github.com/shellrow>"],
