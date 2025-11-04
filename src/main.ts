@@ -4,6 +4,7 @@ import { invoke } from "@tauri-apps/api/core";
 import router from './router';
 import PrimeVue from 'primevue/config';
 import Aura from '@primeuix/themes/aura';
+import { definePreset } from '@primeuix/themes';
 import './style.css';
 import 'primeicons/primeicons.css';
 import type { AppConfig } from "./types/config";
@@ -41,6 +42,42 @@ import Checkbox from 'primevue/checkbox';
 import CheckboxGroup from 'primevue/checkboxgroup';
 import Textarea from 'primevue/textarea';
 
+const ThemePreset = definePreset(Aura, {
+    semantic: {
+        primary: {
+            50: '{indigo.50}',
+            100: '{indigo.100}',
+            200: '{indigo.200}',
+            300: '{indigo.300}',
+            400: '{indigo.400}',
+            500: '{indigo.500}',
+            600: '{indigo.600}',
+            700: '{indigo.700}',
+            800: '{indigo.800}',
+            900: '{indigo.900}',
+            950: '{indigo.950}'
+        },
+        colorScheme: {
+            light: {
+                semantic: {
+                    highlight: {
+                        background: '{primary.50}',
+                        color: '{primary.700}',
+                    }
+                }
+            },
+            dark: {
+                semantic: {
+                    highlight: {
+                        background: '{primary.200}',
+                        color: '{primary.900}',
+                    }
+                }
+            }
+        }
+    }
+});
+
 async function initConfigFromTauri() {
   try {
     const cfg: AppConfig = await invoke("get_config");
@@ -64,7 +101,7 @@ const app = createApp(App);
 app.use(router);
 app.use(PrimeVue, {
     theme: {
-        preset: Aura,
+        preset: ThemePreset,
         options: {
             darkModeSelector: '.app-dark',
         }
