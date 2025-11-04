@@ -107,7 +107,7 @@ onBeforeUnmount(() => {
           <InputGroupAddon><i class="pi pi-search"/></InputGroupAddon>
           <InputText v-model="q" placeholder="Search (dst/gw/if/flags...)" />
         </InputGroup>
-        <Button outlined icon="pi pi-refresh" :loading="loading" @click="fetchRoutes" class="w-9 h-9" />
+        <Button outlined icon="pi pi-refresh" :loading="loading" @click="fetchRoutes" class="w-9 h-9" severity="secondary" />
       </div>
     </div>
 

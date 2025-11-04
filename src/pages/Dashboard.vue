@@ -152,8 +152,8 @@ onBeforeUnmount(() => {
         </div>
       </div>
       <div class="flex items-center gap-2 justify-end">
-        <Button outlined :icon="publicIpVisible ? 'pi pi-eye' : 'pi pi-eye-slash'" @click="togglePrivacy" class="w-9 h-9" />
-        <Button outlined icon="pi pi-refresh" :loading="loading" @click="fetchAll" class="w-9 h-9" />
+        <Button outlined :icon="publicIpVisible ? 'pi pi-eye' : 'pi pi-eye-slash'" @click="togglePrivacy" class="w-9 h-9" severity="secondary" />
+        <Button outlined icon="pi pi-refresh" :loading="loading" @click="fetchAll" class="w-9 h-9" severity="secondary" />
       </div>
     </div>
 

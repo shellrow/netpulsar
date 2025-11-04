@@ -43,8 +43,8 @@ const { wrapRef, toolbarRef, panelHeight } = useScrollPanelHeight();
         <span class="text-surface-500 dark:text-surface-400 text-sm">Public IP Information</span>
       </div>
       <div class="flex items-center gap-2 justify-end">
-        <Button outlined :icon="publicIpVisible ? 'pi pi-eye' : 'pi pi-eye-slash'" @click="togglePublicIp" class="w-9 h-9" />
-        <Button outlined icon="pi pi-refresh" :loading="loading" @click="refresh" class="w-9 h-9" />
+        <Button outlined :icon="publicIpVisible ? 'pi pi-eye' : 'pi pi-eye-slash'" @click="togglePublicIp" class="w-9 h-9" severity="secondary" />
+        <Button outlined icon="pi pi-refresh" :loading="loading" @click="refresh" class="w-9 h-9" severity="secondary" />
       </div>
     </div>
 
