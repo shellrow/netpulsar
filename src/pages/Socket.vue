@@ -224,6 +224,7 @@ onBeforeUnmount(() => {
             :loading="loading"
             @click="fetchSockets"
             class="w-9 h-9 shrink-0"
+            severity="secondary"
         />
         </div>
     </div>

@@ -105,6 +105,7 @@ onMounted(async () => {
             @click="isCompact = !isCompact"
             v-tooltip.top="isCompact ? 'Expand sidebar' : 'Collapse sidebar'"
             aria-label="Toggle compact sidebar"
+            severity="secondary"
           />
         </div>
         <!-- NAV SCROLL (flat) -->
