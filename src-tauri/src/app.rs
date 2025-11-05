@@ -24,6 +24,7 @@ fn theme_is_dark(app: &tauri::App) -> bool {
     }
 }
 
+#[allow(unused_variables)]
 fn tray_icon_bytes(dark: bool) -> &'static [u8] {
     #[cfg(target_os = "macos")]
     {
