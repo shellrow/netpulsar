@@ -25,10 +25,17 @@ fn theme_is_dark(app: &tauri::App) -> bool {
 }
 
 fn tray_icon_bytes(dark: bool) -> &'static [u8] {
-    if dark {
-        include_bytes!("../icons/tray/tray-icon-dark-24x24.png")
-    } else {
-        include_bytes!("../icons/tray/tray-icon-light-24x24.png")
+    #[cfg(target_os = "macos")]
+    {
+        if dark {
+            include_bytes!("../icons/tray/tray-icon-dark-24x24.png")
+        } else {
+            include_bytes!("../icons/tray/tray-icon-light-24x24.png")
+        }
+    }
+    #[cfg(not(target_os = "macos"))]
+    {
+        include_bytes!("../icons/tray/tray-icon-24x24.png")
     }
 }
 
