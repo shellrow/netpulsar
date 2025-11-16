@@ -1,16 +1,16 @@
 import { ref } from "vue";
 
-const LS_PUBLIC_IP_VISIBLE = "netpulsar:privacy:public_ip_visible_default";
-const LS_HOSTNAME_VISIBLE = "netpulsar:privacy:hostname_visible_default";
+const LS_PUBLIC_IP_VISIBLE = "netpulsar:privacy:public_ip_visible";
+const LS_HOSTNAME_VISIBLE = "netpulsar:privacy:hostname_visible";
 const MASK_STR = "**hidden**";
 
 // Persistent visibility flag
 const publicIpVisible = ref<boolean>(
-  (localStorage.getItem(LS_PUBLIC_IP_VISIBLE) ?? "0") === "1"
+  (localStorage.getItem(LS_PUBLIC_IP_VISIBLE) ?? "1") === "1"
 );
 
 const hostnameVisible = ref<boolean>(
-  (localStorage.getItem(LS_HOSTNAME_VISIBLE) ?? "0") === "1"
+  (localStorage.getItem(LS_HOSTNAME_VISIBLE) ?? "1") === "1"
 );
 
 // Toggle visibility
