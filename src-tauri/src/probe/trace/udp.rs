@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 use anyhow::Result;
 use bytes::Bytes;
 use nex_packet::icmp::IcmpType;
