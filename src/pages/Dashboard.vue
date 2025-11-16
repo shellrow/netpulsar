@@ -77,6 +77,26 @@ function hexToRgba(hex: string, alpha: number) {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
+function formatAxisThroughput(value: number): string {
+  const bytesPerSec = value ?? 0;
+  const useBits = bpsUnit.value === "bits";
+  const base = useBits ? bytesPerSec * 8 : bytesPerSec;
+
+  const unitSuffix = useBits ? "bps" : "B/s";
+
+  const abs = Math.abs(base);
+  if (abs >= 1_000_000_000) {
+    return `${(base / 1_000_000_000).toFixed(1)} G${unitSuffix}`;
+  }
+  if (abs >= 1_000_000) {
+    return `${(base / 1_000_000).toFixed(1)} M${unitSuffix}`;
+  }
+  if (abs >= 1_000) {
+    return `${(base / 1_000).toFixed(1)} K${unitSuffix}`;
+  }
+  return `${Math.round(base)} ${unitSuffix}`;
+}
+
 const trafficData = ref<ChartData<"line">>({
   labels: [],
   datasets: [
@@ -141,7 +161,8 @@ const trafficOptions = ref<ChartOptions<"line">>({
       suggestedMax: 1_000, // Initial max
       ticks: {
         callback(value) {
-          return String(value);
+          const num = typeof value === "number" ? value : Number(value);
+          return formatAxisThroughput(Number.isFinite(num) ? num : 0);
         },
         color: textColorSecondary
       },
