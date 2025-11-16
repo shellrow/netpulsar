@@ -7,6 +7,7 @@ pub mod routes;
 pub mod scan;
 pub mod socket;
 pub mod system;
+pub mod trace;
 
 use crate::model::AppInfo;
 

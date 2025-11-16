@@ -50,6 +50,7 @@ const MENU: Item[] = [
   { name: "internet",        label: "Internet", icon: "pi-globe" },
   { name: "dns",             label: "DNS Lookup", icon: "pi-server" },
   { name: "ping",            label: "Ping", icon: "pi-bolt" },
+  { name: "traceroute",      label: "Traceroute", icon: "pi-map" },
   { name: "portscan",        label: "Port Scan", icon: "pi-shield" },
   { name: "hostscan",        label: "Host Scan", icon: "pi-search" },
   { name: "system-os",       label: "OS", icon: "pi-box", aria: "OS Info" }
