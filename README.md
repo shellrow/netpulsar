@@ -60,7 +60,5 @@ cargo tauri build
 
 ## Screenshots
 ![NetPulsar Dashboard](resources/ss/np-dashboard.png)
-![NetPulsar Interfaces](resources/ss/np-ifaces.png)
+![NetPulsar Traceroute](resources/ss/np-traceroute.png)
 ![NetPulsar Neighbor](resources/ss/np-neighbor.png)
-![NetPulsar Ping](resources/ss/np-ping.png)
-![NetPulsar PortScan](resources/ss/np-portscan.png)
