@@ -639,7 +639,14 @@ onBeforeUnmount(() => {
 
           <!-- Live Traffic -->
           <Card>
-            <template #title>Live Traffic (Default Interface)</template>
+            <template #title>
+              <div v-if="defaultIface">
+                Live Traffic ({{ defaultIface.name }})
+              </div>
+              <div v-else>
+                Live Traffic (No default interface)
+              </div>
+            </template>
             <template #content>
               <div class="flex flex-col gap-3 text-sm">
                 <div class="flex items-center justify-between">
