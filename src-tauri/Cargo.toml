@@ -31,7 +31,8 @@ anyhow = { version = "1" }
 tracing = { version = "0.1" }
 tracing-subscriber = { version = "0.3", features = ["time", "chrono"] }
 libc = "0.2"
-netdev = { version = "0.38", features = ["serde"] }
+mac-addr = { version = "0.3.0" }
+netdev = { version = "0.39", features = ["serde"] }
 netroute = { version = "0.3", features = ["serde"] }
 netsock = { version = "0.5", features = ["serde"] }
 futures = {version = "0.3", features = ["executor", "thread-pool"] }
@@ -39,14 +40,14 @@ tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "net"]
 reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls", "rustls-tls-native-roots", "http2", "system-proxy" ] }
 hostname = { version = "0.4" }
 os_info = { version = "3.12" }
-ndb-oui = { version = "0.3", features = ["bundled"] }
+ndb-oui = { version = "0.4", features = ["bundled"] }
 ndb-tcp-service = { version = "0.3", features = ["bundled"] }
 ndb-udp-service = { version = "0.3", features = ["bundled"] }
 humansize = "2.1"
 url = "2.5"
 data-encoding = "2.9"
 home = { version = "0.5" }
-nex-packet = "0.23"
+nex-packet = "0.24"
 socket2 = { version = "0.5", features = ["all"] }
 rustls = { version = "0.23", default-features = false, features = ["ring", "std"] }
 rustls-native-certs = "0.7"
