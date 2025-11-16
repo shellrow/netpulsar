@@ -193,6 +193,7 @@ pub fn run() {
             command::scan::port_scan,
             command::scan::host_scan,
             command::scan::neighbor_scan,
+            command::trace::traceroute,
         ])
         .run(tauri::generate_context!())
         .expect("error while running netpulsar application");

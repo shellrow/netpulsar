@@ -6,7 +6,7 @@ import { getName as getAppName, getVersion as getAppVersion } from "@tauri-apps/
 
 const innerWidth = ref(window.innerWidth);
 const innerHeight = ref(window.innerHeight);
-const { currentThemeIcon, currentLogoFile, toggleTheme } = useTheme();
+const { currentLogoFile } = useTheme();
 const LS_COMPACT = "netpulsar:sidebar:compact";
 const stored = localStorage.getItem(LS_COMPACT);
 const isCompact = ref(stored != null ? stored === "1" : true);
@@ -50,6 +50,7 @@ const MENU: Item[] = [
   { name: "internet",        label: "Internet", icon: "pi-globe" },
   { name: "dns",             label: "DNS Lookup", icon: "pi-server" },
   { name: "ping",            label: "Ping", icon: "pi-bolt" },
+  { name: "traceroute",      label: "Traceroute", icon: "pi-map" },
   { name: "portscan",        label: "Port Scan", icon: "pi-shield" },
   { name: "hostscan",        label: "Host Scan", icon: "pi-search" },
   { name: "system-os",       label: "OS", icon: "pi-box", aria: "OS Info" }
@@ -168,7 +169,7 @@ onMounted(async () => {
         </div>
         <!-- Actions -->
         <div class="flex items-center gap-2">
-          <Button outlined :icon="currentThemeIcon" v-tooltip.bottom="'Toggle Theme'" severity="secondary" class="rounded-lg! w-9 h-9" aria-label="Toggle theme" @click="toggleTheme" />
+          <!-- <Button outlined :icon="currentThemeIcon" v-tooltip.bottom="'Toggle Theme'" severity="secondary" class="rounded-lg! w-9 h-9" aria-label="Toggle theme" @click="toggleTheme" /> -->
           <Button outlined icon="pi pi-bell" v-tooltip.bottom="'Notifications'" severity="secondary" class="rounded-lg! w-9 h-9" aria-label="Notifications" />
           <Button outlined icon="pi pi-info-circle" v-tooltip.bottom="'About'" severity="secondary" class="rounded-lg! w-9 h-9" aria-label="About" @click="aboutVisible = true" />
         </div>

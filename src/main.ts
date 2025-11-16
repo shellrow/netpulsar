@@ -41,6 +41,7 @@ import ProgressBar from 'primevue/progressbar';
 import Checkbox from 'primevue/checkbox';
 import CheckboxGroup from 'primevue/checkboxgroup';
 import Textarea from 'primevue/textarea';
+import Chart from 'primevue/chart';
 
 const ThemePreset = definePreset(Aura, {
     semantic: {
@@ -137,6 +138,7 @@ app.component('ProgressBar', ProgressBar);
 app.component('Checkbox', Checkbox);
 app.component('CheckboxGroup', CheckboxGroup);
 app.component('Textarea', Textarea);
+app.component('Chart', Chart);
 
 app.directive('tooltip', Tooltip);
 app.directive('styleclass', StyleClass);

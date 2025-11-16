@@ -15,15 +15,17 @@ Inspect, monitor, and analyze your network.
 
 ## Features
 
-- **Interface Overview** - List active adapters with IPs, gateways, and traffic stats  
-- **Neighbor Scan** - Scan your LAN
+- **Interface Overview** - Active interfaces with IPs, gateways, and real-time stats  
+- **Live Traffic Charts** - RX/TX throughput and MIN/AVG/MAX
+- **Neighbor Scan** - Discover devices in your local network
 - **Net Route** - Inspect routing tables, gateways, and metrics  
-- **Socket Connection** - View active TCP/UDP connections with process information  
-- **Public IP Info** - Detect IPv4 / IPv6, ASN, and Country data  
-- **Ping / TCP / UDP / QUIC** - Test latency and reachability across protocols  
-- **Port Scan** - Discover open ports (Common, Top1000, or custom sets)  
+- **Socket Connection** - View active TCP/UDP sockets with process information  
+- **Public IP Info** - Detect IPv4 / IPv6, ASN, and country  
+- **Ping (ICMP / TCP / UDP / QUIC)** - Measure latency and reachability across protocols  
+- **Traceroute (ICMP / UDP)** - Per-hop RTT with detailed hop visualization
+- **Port Scan** - Detect open ports (Common, Top1000, or custom sets)  
 - **Host Scan** - Scan your network to identify alive hosts  
-- **Cross-Platform** - macOS, Windows, Linux supported  
+- **Cross-Platform** - macOS, Windows, and Linux supported  
 
 ---
 
@@ -60,7 +62,5 @@ cargo tauri build
 
 ## Screenshots
 ![NetPulsar Dashboard](resources/ss/np-dashboard.png)
-![NetPulsar Interfaces](resources/ss/np-ifaces.png)
+![NetPulsar Traceroute](resources/ss/np-traceroute.png)
 ![NetPulsar Neighbor](resources/ss/np-neighbor.png)
-![NetPulsar Ping](resources/ss/np-ping.png)
-![NetPulsar PortScan](resources/ss/np-portscan.png)

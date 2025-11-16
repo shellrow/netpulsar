@@ -2292,6 +2292,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c41e0c4fef86961ac6d6f8a82609f55f31b05e4fce149ac5710e439df7619ba4"
 
 [[package]]
+name = "mac-addr"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d3d25b0e0b648a86960ac23b7ad4abb9717601dec6f66c165f5b037f3f03065f"
+dependencies = [
+ "serde",
+]
+
+[[package]]
 name = "markup5ever"
 version = "0.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2430,14 +2439,14 @@ dependencies = [
 
 [[package]]
 name = "ndb-oui"
-version = "0.3.2"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "787e9dfc6693c40148f5123e1f53709eda311f1c2de07b87212bc9ce751db8f4"
+checksum = "ed688164b72fd09394f077dda902f086280565e6370f74364112f43b822a8f35"
 dependencies = [
  "anyhow",
  "bincode",
  "csv",
- "netdev",
+ "mac-addr",
  "rangemap",
  "serde",
 ]
@@ -2500,13 +2509,14 @@ dependencies = [
 
 [[package]]
 name = "netdev"
-version = "0.38.2"
+version = "0.39.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "67ab878b4c90faf36dab10ea51d48c69ae9019bcca47c048a7c9b273d5d7a823"
+checksum = "35a703aa1a87cd885b9f674922445a42dbb0c0f4f1b28fef21b227ae32375d21"
 dependencies = [
  "dlopen2 0.5.0",
  "ipnet",
  "libc",
+ "mac-addr",
  "netlink-packet-core 0.8.1",
  "netlink-packet-route",
  "netlink-sys",
@@ -2604,7 +2614,7 @@ dependencies = [
 
 [[package]]
 name = "netpulsar"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "anyhow",
  "bytes",
@@ -2615,6 +2625,7 @@ dependencies = [
  "hostname",
  "humansize",
  "libc",
+ "mac-addr",
  "ndb-oui",
  "ndb-tcp-service",
  "ndb-udp-service",
@@ -2692,18 +2703,18 @@ checksum = "650eef8c711430f1a879fdd01d4745a7deea475becfb90269c06775983bbf086"
 
 [[package]]
 name = "nex-core"
-version = "0.23.2"
+version = "0.24.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eab4e51a2f7d20a50921aaace9f7989a5a1da737f383f2a0b4156e90f7dbb384"
+checksum = "f1659124f8b65df50c9351e0d7360ec35b5be8d4deb9c02bd744e91bd91ff349"
 dependencies = [
  "netdev",
 ]
 
 [[package]]
 name = "nex-packet"
-version = "0.23.2"
+version = "0.24.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "75b48c882ea0e576780c6f48b32f205e9104767347d9da0946750d2e74b84d24"
+checksum = "9f7d62533e231566c19d67c6ab6361297204981b9ab1129d6099593d3edf78df"
 dependencies = [
  "bytes",
  "nex-core",

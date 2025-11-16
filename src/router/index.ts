@@ -9,6 +9,7 @@ import OsInfo from '@/pages/System/OS.vue';
 import Settings from '@/pages/Settings.vue';
 import DNS from '@/pages/DNS.vue';
 import Ping from '@/pages/Ping.vue';
+import Traceroute from '@/pages/Traceroute.vue';
 import PortScan from '@/pages/PortScan.vue';
 import HostScan from '@/pages/HostScan.vue';
 import Neighbor from '@/pages/Neighbor.vue';
@@ -31,6 +32,7 @@ const router = createRouter({
     },
     { path: '/dns', name: 'dns', component: DNS },
     { path: '/ping', name: 'ping', component: Ping },
+    { path: '/traceroute', name: 'traceroute', component: Traceroute },
     { path: '/portscan', name: 'portscan', component: PortScan },
     { path: '/hostscan', name: 'hostscan', component: HostScan },
     { path: '/settings', name: 'settings', component: Settings },

@@ -115,3 +115,30 @@ export type NeighborScanReport = {
   neighbors: NeighborHost[];
   total: number;
 };
+
+export type TraceProtocol = "Icmp" | "Udp";
+
+export interface TraceSetting {
+  hostname: string | null;
+  ip_addr: string;
+  max_hops: number;
+  tries_per_hop: number;
+  timeout_ms: number;
+  protocol: TraceProtocol;
+}
+
+export interface TraceHop {
+  hop: number;
+  ip_addr?: string | null;
+  rtt_ms?: number | null;
+  reached: boolean;
+  note?: string | null;
+}
+
+export interface TraceDonePayload {
+  reached: boolean;
+  hops: number;
+  ip_addr: string;
+  hostname?: string | null;
+  protocol: TraceProtocol;
+}
