@@ -173,6 +173,33 @@ const trafficOptions = ref<ChartOptions<"line">>({
   },
 });
 
+function initTrafficChart() {
+  const now = Date.now();
+
+  // Generate last 30 seconds labels as initial labels
+  const labels = Array.from({ length: 30 }, (_, i) =>
+    new Date(now - (29 - i) * 1000).toLocaleTimeString()
+  );
+
+  const zeros = Array(30).fill(0);
+
+  trafficData.value = {
+    labels,
+    datasets: [
+      {
+        ...(trafficData.value.datasets?.[0] || {}),
+        label: rxLabel.value,
+        data: [...zeros],
+      },
+      {
+        ...(trafficData.value.datasets?.[1] || {}),
+        label: txLabel.value,
+        data: [...zeros],
+      },
+    ],
+  };
+}
+
 function refreshTrafficLabels() {
   trafficData.value = {
     ...trafficData.value,
@@ -334,6 +361,7 @@ function togglePrivacy() {
 }
 
 onMounted(async () => {
+  initTrafficChart();
   refreshUnitPref();
   await fetchAll();
   unlistenStats = await listen("stats_updated", onStatsUpdated);
